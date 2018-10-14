@@ -1,0 +1,6 @@
+com/transactionanalyser/loaders/CSVFileLoader.class
+com/transactionanalyser/mappers/TransactionMapper.class
+com/transactionanalyser/entities/Transaction.class
+com/transactionanalyser/mappers/EntityMapper.class
+com/transactionanalyser/executor/TransactionAnalyser.class
+com/transactionanalyser/loaders/FileLoader.class

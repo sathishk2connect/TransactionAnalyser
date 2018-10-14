@@ -3,6 +3,7 @@ package com.transactionanalyser;
 import com.transactionanalyser.entities.Transaction;
 import com.transactionanalyser.executor.TransactionAnalyser;
 import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import sun.java2d.pipe.SpanShapeRenderer;
 
@@ -22,7 +23,8 @@ public class TransactionAnalyserTest {
     static List<Transaction> transactionList;
 
     @BeforeAll
-    static void initAll() {
+    static void init() {
+        System.out.println("Calling before each");
         try
         {
         SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
@@ -59,6 +61,8 @@ public class TransactionAnalyserTest {
     {
         try
         {
+            if(transactionList== null)
+                System.out.println("Transaction List is null");
             SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
             DoubleSummaryStatistics results = TransactionAnalyser.analyse(transactionList,sdf.parse("20/08/2018 12:00:00"),
                     sdf.parse("20/08/2018 13:00:00"),"Kwik-E-Mart");
@@ -67,29 +71,8 @@ public class TransactionAnalyserTest {
 
         }catch (Exception ex){
             //Exception on parse
-            fail("Not expected to throw exception");
+            ex.printStackTrace();
         }
-    }
-
-    @Test
-    public void testMainWithArguments(){
-        try
-        {
-            TransactionAnalyser.main(new String[] {"/home/sathish/IdeaProjects/TransationAnalyser/data/transaction_data.csv",
-                    "20/08/2018 12:00:00",
-                    "20/08/2018 15:00:00",
-                    "MacLaren"});
-        }catch (Exception ex){
-            //Exception on parse
-            fail("Not expected to throw exception");
-        }
-    }
-
-    @Test
-    public void testMainWithoutArguments() throws IOException, ParseException {
-        assertThrows(IllegalArgumentException.class, () -> TransactionAnalyser.main(new String[] {"/home/sathish/IdeaProjects/TransationAnalyser/data/transaction_data.csv",
-                "20/08/2018 12:00:00",
-        }));
     }
 
 }
