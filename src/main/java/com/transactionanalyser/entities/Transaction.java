@@ -2,6 +2,7 @@ package com.transactionanalyser.entities;
 
 import java.io.Serializable;
 import java.util.Date;
+import java.util.Objects;
 
 public class Transaction {
     private String id;
@@ -10,6 +11,24 @@ public class Transaction {
     private String merchant;
     private String type;
     private String relatedTransaction;
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Transaction that = (Transaction) o;
+        return Objects.equals(id, that.id) &&
+                Objects.equals(transactionDate, that.transactionDate) &&
+                Objects.equals(amount, that.amount) &&
+                Objects.equals(merchant, that.merchant) &&
+                Objects.equals(type, that.type) &&
+                Objects.equals(relatedTransaction, that.relatedTransaction);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, transactionDate, amount, merchant, type, relatedTransaction);
+    }
 
     public Transaction() {
         //default constructor

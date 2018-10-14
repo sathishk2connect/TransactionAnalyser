@@ -1,1 +1,2 @@
-/home/sathish/IdeaProjects/TransationAnalyser/src/test/java/com/transactionanalyser/TransactionAnalyserTest.java
+/home/sathish/IdeaProjects/TransationAnalyser/src/test/java/com/transactionanalyser/executor/TransactionAnalyserTest.java
+/home/sathish/IdeaProjects/TransationAnalyser/src/test/java/com/transactionanalyser/mappers/TransactionMapperTest.java

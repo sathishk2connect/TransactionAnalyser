@@ -12,6 +12,10 @@ public class CSVFileLoader implements FileLoader {
 
     Iterable<CSVRecord> records;
 
+    public CSVFileLoader() {
+        //default constructor
+    }
+
     public CSVFileLoader(String location) throws FileNotFoundException, IOException {
         Reader in = new FileReader(location);
         records = CSVFormat.DEFAULT.withFirstRecordAsHeader().parse(in);

@@ -1,4 +1,4 @@
-package com.transactionanalyser;
+package com.transactionanalyser.executor;
 
 import com.transactionanalyser.entities.Transaction;
 import com.transactionanalyser.executor.TransactionAnalyser;
@@ -24,7 +24,6 @@ public class TransactionAnalyserTest {
 
     @BeforeAll
     static void init() {
-        System.out.println("Calling before each");
         try
         {
         SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");

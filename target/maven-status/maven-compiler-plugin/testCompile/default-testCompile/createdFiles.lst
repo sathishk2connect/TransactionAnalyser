@@ -1,1 +1,2 @@
-com/transactionanalyser/TransactionAnalyserTest.class
+com/transactionanalyser/mappers/TransactionMapperTest.class
+com/transactionanalyser/executor/TransactionAnalyserTest.class
